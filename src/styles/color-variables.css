@@ -1,0 +1,15 @@
+:root {
+  --colorMain: #5a65ff;
+  --colorMainBright: #838bff;
+  --colorTextWhite: #ffffff;
+  --colorTextBlack: #000000;
+  --bgcolor1: #eff1ff;
+  --bgcolor2: #bbaebe;
+  --bgcolor3: #e3e3e3;
+  --colorViol: #aa76be;
+  --colorViolBright: #c595d7;
+  --colorDarkViol: #7f277e;
+  --colorDarkViolBright: #a64aa5;
+  --colorYell: #e0b703;
+  --colorYellBright: #eac522;
+}
