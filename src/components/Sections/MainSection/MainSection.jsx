@@ -4,8 +4,10 @@ import arrow from "../../../assets/rarrow.svg";
 import illu from "../../../assets/illu.png";
 
 import "./MainSection.css";
+import { useNavigate } from "react-router-dom";
 
 const MainSection = () => {
+  const navigate = useNavigate();
   return (
     <Container maxWidth="xl">
       <div className="mainBlock" id="featureBlock">
@@ -30,8 +32,16 @@ const MainSection = () => {
               Учись, находи единомышленников и развивайся с Skillnet.kg
             </h2>
             <div className="mainFirst_btns">
-              <button className="mainFirst_reg">Регистрация</button>
-              <button className="mainFirst_log">Вход</button>
+              <button
+                className="mainFirst_reg"
+                onClick={() => navigate("/register")}>
+                Регистрация
+              </button>
+              <button
+                className="mainFirst_log"
+                onClick={() => navigate("/login")}>
+                Вход
+              </button>
             </div>
           </div>
           <div className="mainImg_block">

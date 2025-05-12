@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import NotFoundPage from "./pages/NotFoundPage";
+import MultiAuthPage from "./pages/MultiAuthPage";
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
@@ -14,6 +15,11 @@ const MainRoutes = () => {
       link: "*",
       element: <NotFoundPage />,
       id: 2,
+    },
+    {
+      link: "/register",
+      element: <MultiAuthPage />,
+      id: 3,
     },
   ];
   return (

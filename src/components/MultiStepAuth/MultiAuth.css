@@ -1,0 +1,47 @@
+@import "../../styles/color-variables.css";
+
+.mainBlock {
+  position: relative;
+}
+.mainBlock_info {
+  display: flex;
+  flex-direction: column;
+}
+.mainBlock_nav {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--colorMainDark);
+  justify-content: space-around;
+  border-radius: 20px 20px 0 0;
+  color: white;
+}
+.mainBlock_nav > div {
+  border-radius: 20px 40px 40px 0;
+  text-align: center;
+  padding: 1.5rem 0;
+  width: 100%;
+  height: 100%;
+}
+.mainBlock_step {
+  border: 3px solid var(--colorMain);
+  background: white;
+  border-radius: 0 0 20px 20px;
+  padding: 2rem;
+}
+.mainBlock_contoller {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+.mainBlock_btn {
+  height: 3rem;
+  width: 10rem;
+  font-size: 1.2rem;
+  background-color: var(--colorMain);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
