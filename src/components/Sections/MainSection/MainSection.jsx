@@ -8,7 +8,7 @@ import "./MainSection.css";
 const MainSection = () => {
   return (
     <Container maxWidth="xl">
-      <div className="mainBlock">
+      <div className="mainBlock" id="featureBlock">
         <div className="mainBlock_first">
           <div className="mainFirst_block">
             <div className="mainFirst_arrows">

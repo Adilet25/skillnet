@@ -10,7 +10,7 @@ const SecondSection = () => {
   return (
     <div className="scnMain">
       <Container maxWidth="xl">
-        <div className="scnMain_block">
+        <div className="scnMain_block " id="benefitBlock">
           <div className="scnMain_first">
             <h1>Возможности Skillnet.kg</h1>
             <div className="scnFirst_round">

@@ -16,7 +16,7 @@ const ForthSection = () => {
   return (
     <div style={{ backgroundColor: "white" }}>
       <Container maxWidth="xl">
-        <div className="frtMain_block">
+        <div className="frtMain_block" id="reviewBlock">
           <div className="frtMain_title">
             <div className="arrowsBlock">
               <img src={arrow} alt="e" className="arrowleft arrowlr1" />
