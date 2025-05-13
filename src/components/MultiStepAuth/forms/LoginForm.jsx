@@ -2,8 +2,10 @@ import { Container } from "@mui/material";
 import { FormWrapper } from "../FormWrapper.jsx";
 import "../MultiAuth.css";
 import CustomInput from "../../Templates/CustomInput.jsx";
+import { useNavigate } from "react-router";
 
 export function LoginForm() {
+  const navigate = useNavigate("");
   // данные нигде не созроняются
   return (
     <Container maxWidth="xl">
@@ -25,11 +27,7 @@ export function LoginForm() {
                     системе.
                   </h2>
                 </div>
-                <div
-                  className="loginInput_block"
-                  style={{
-                    
-                  }}>
+                <div className="loginInput_block" style={{}}>
                   <CustomInput
                     label="Электронная почта"
                     name="Электронная почта"

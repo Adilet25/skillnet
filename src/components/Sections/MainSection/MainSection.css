@@ -147,25 +147,16 @@
     align-items: center;
     justify-content: space-between;
   }
+
   .mainFirst_reg,
   .mainFirst_log {
     margin-top: 1rem;
     width: 100%;
-  }
-}
-@media screen and (max-width: 425px) {
-  .mainFirst_text {
-    font-size: 1.5rem;
   }
   .mainFirst_btns {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-  }
-  .mainFirst_reg,
-  .mainFirst_log {
-    margin-top: 1rem;
-    width: 100%;
   }
   .mainBlock_first {
     flex-direction: column-reverse;
@@ -177,4 +168,9 @@
   .mainBlock_second {
     grid-template-columns: repeat(1, 1fr);
   }
+  .mainFirst_text {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 425px) {
 }
