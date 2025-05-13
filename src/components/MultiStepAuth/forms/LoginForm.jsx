@@ -4,14 +4,14 @@ import "../MultiAuth.css";
 import CustomInput from "../../Templates/CustomInput.jsx";
 
 export function LoginForm() {
-    // данные нигде не созроняются 
+  // данные нигде не созроняются
   return (
     <Container maxWidth="xl">
       <h1 style={{ textAlign: "center" }}>Авторизация</h1>
       <div className="mainBlock">
         <form>
           <div className="mainBlock_info">
-            <div className="mainBlock_nav">
+            <div className="loginBlock_nav">
               <div className="mainBlock_step1" style={{ fontSize: "1.2rem" }}>
                 Вход в систему
               </div>
@@ -26,12 +26,9 @@ export function LoginForm() {
                   </h2>
                 </div>
                 <div
+                  className="loginInput_block"
                   style={{
-                    display: "grid",
-                    gridTemplateColumns: "repeat(2,1fr)",
-                    gap: "1rem",
-                    width: "90%",
-                    marginTop: "2rem",
+                    
                   }}>
                   <CustomInput
                     label="Электронная почта"

@@ -29,14 +29,14 @@
     margin-left: 1rem;
   }
 }
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 580px) {
   .navtext {
     display: none;
   }
-  .navMain_block {
-    justify-content: space-between;
-  }
   .navMenu_btn {
     display: block !important;
+  }
+  .navMain_block {
+    justify-content: space-between;
   }
 }

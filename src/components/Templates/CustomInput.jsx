@@ -54,6 +54,7 @@ const CustomInput = ({
           className={`custom-input__input ${
             error ? "custom-input__input--error" : ""
           }`}
+          
           style={{ height }}
           required={required}
         />

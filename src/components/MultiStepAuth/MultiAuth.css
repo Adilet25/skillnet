@@ -22,6 +22,7 @@
   text-decoration: underline;
   cursor: pointer;
   transition: 0.2s ease-in-out;
+  text-align: center;
 }
 .mainBlock_already:hover {
   color: var(--colorMain);
@@ -87,7 +88,7 @@
   align-items: center;
 }
 
-/*! Address */
+/*! Choose */
 .chsMain_block {
   display: flex;
   flex-direction: column;
@@ -131,4 +132,74 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   width: 80%;
+}
+
+/*! Login */
+.loginInput_block {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  width: 90%;
+  margin-top: 2rem;
+}
+.loginBlock_nav {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--colorMain);
+  padding: 2rem;
+  justify-content: space-around;
+  border-radius: 20px 20px 0 0;
+  color: white;
+}
+@media screen and (max-width: 950px) {
+  .inputMain_block {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media screen and (max-width: 768px) {
+  .mainBlock_nav > div {
+    flex-direction: column;
+  }
+  .mainBlock_step1 {
+    border-radius: 20px 20px 20px 0;
+  }
+  .mainBlock_step2 {
+    border-radius: 0px 40px 40px 0;
+  }
+  .mainBlock_step3 {
+    border-radius: 0px 20px 0px 0;
+  }
+  .mainBlock_step1 {
+    border-radius: 20px 40px 40px 0;
+  }
+  .mainBlock_stepstext {
+    display: none;
+  }
+  .chsRadio_block {
+    flex-direction: column;
+    align-items: center;
+  }
+  .chsRadio {
+    width: 90%;
+    margin-bottom: 1rem;
+  }
+}
+@media screen and (max-width: 620px) {
+  .custom-input__input {
+    max-width: 100% !important;
+  }
+  .custom-input__label {
+    width: fit-content;
+    text-wrap: wrap;
+  }
+  .custom-input__select {
+    width: 100%;
+  }
+  .loginInput_block {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+    width: 90%;
+    margin-top: 2rem;
+  }
 }

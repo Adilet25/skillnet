@@ -88,7 +88,7 @@ function MultiStepAuth() {
                 }}
                 className="mainBlock_step1">
                 <div className="mainBlock_num">1</div>
-                Выбор типа аккаунта
+                <p className="mainBlock_stepstext">Выбор типа аккаунта</p>
               </div>
               <div
                 style={{
@@ -99,7 +99,7 @@ function MultiStepAuth() {
                 }}
                 className="mainBlock_step2">
                 <div className="mainBlock_num">2</div>
-                Ввод данных
+                <p className="mainBlock_stepstext">Ввод данных</p>
               </div>
               <div
                 style={{
@@ -110,7 +110,7 @@ function MultiStepAuth() {
                 }}
                 className="mainBlock_step3">
                 <div className="mainBlock_num">3</div>
-                Подтверждение почты
+                <p className="mainBlock_stepstext">Подтверждение почты</p>
               </div>
             </div>
             <div className="mainBlock_step">{step}</div>
