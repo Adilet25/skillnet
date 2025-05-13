@@ -2,7 +2,9 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import NotFoundPage from "./pages/NotFoundPage";
-import MultiAuthPage from "./pages/MultiAuthPage";
+import RegisterPage from "./pages/RegisterPage";
+import LoginPage from "./pages/LoginPage";
+
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
@@ -18,8 +20,13 @@ const MainRoutes = () => {
     },
     {
       link: "/register",
-      element: <MultiAuthPage />,
+      element: <RegisterPage />,
       id: 3,
+    },
+    {
+      link: "/login",
+      element: <LoginPage />,
+      id: 4,
     },
   ];
   return (

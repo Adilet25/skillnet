@@ -1,36 +1,68 @@
 import { FormEvent, useState } from "react";
-import { AccountForm } from "./forms/AccountForm";
-import { AddressForm } from "./forms/AddressForm";
+import { useNavigate } from "react-router";
+import { ConfirmForm } from "./forms/ConfirmForm";
+import { ChooseForm } from "./forms/ChooseForm";
 import { useMultistepForm } from "./hook/useMultistepForm";
 import { UserForm } from "./forms/UserForm";
 import { Container } from "@mui/material";
 
 import "./MultiAuth.css";
+import { LoginForm } from "./forms/LoginForm";
 
 const INITIAL_DATA = {
   firstName: "",
   lastName: "",
-  age: "",
-  street: "",
-  city: "",
-  state: "",
-  zip: "",
   email: "",
   password: "",
+  date: "",
+  username: "",
+  education: "",
+  interests: "",
+};
+const ORG_DATA = {
+  name: "",
+  typeOfWork: "",
+  emailOrg: "",
+  passwordOrg: "",
+  dataContactPerson: "",
+  jobPosition: "",
+  usernameOrg: "",
+  number: "",
+  socialLinks: "",
+  reason: "",
 };
 
 function MultiStepAuth() {
+  const navigate = useNavigate("");
   const [data, setData] = useState(INITIAL_DATA);
+  const [dataOrg, setDataOrg] = useState(ORG_DATA);
+  const [type, setType] = useState(null);
   function updateFields(fields) {
     setData((prev) => {
       return { ...prev, ...fields };
     });
   }
+  function updateFieldsOrg(fields) {
+    setDataOrg((prev) => {
+      return { ...prev, ...fields };
+    });
+  }
   const { steps, currentStepIndex, step, isFirstStep, isLastStep, back, next } =
     useMultistepForm([
-      <AddressForm {...data} updateFields={updateFields} />,
-      <UserForm {...data} updateFields={updateFields} />,
-      <AccountForm {...data} updateFields={updateFields} />,
+      <ChooseForm
+        {...data}
+        type={type}
+        setType={setType}
+        updateFields={updateFields}
+      />,
+      <UserForm
+        {...data}
+        {...dataOrg}
+        type={type}
+        updateFields={updateFields}
+        updateFieldsOrg={updateFieldsOrg}
+      />,
+      <ConfirmForm {...data} updateFields={updateFields} />,
     ]);
 
   function onSubmit(e) {
@@ -41,6 +73,7 @@ function MultiStepAuth() {
 
   return (
     <Container maxWidth="xl">
+      <h1 style={{ textAlign: "center" }}>Регистрация</h1>
       <div className="mainBlock">
         <form onSubmit={onSubmit}>
           <div className="mainBlock_info">
@@ -52,8 +85,10 @@ function MultiStepAuth() {
                     currentStepIndex + 1 == 1
                       ? "var(--colorMain)"
                       : "var(--colorMainDark)",
-                }}>
-                1 Выбор типа аккаунта
+                }}
+                className="mainBlock_step1">
+                <div className="mainBlock_num">1</div>
+                Выбор типа аккаунта
               </div>
               <div
                 style={{
@@ -61,8 +96,10 @@ function MultiStepAuth() {
                     currentStepIndex + 1 == 2
                       ? "var(--colorMain)"
                       : "var(--colorMainDark)",
-                }}>
-                2 Ввод данных
+                }}
+                className="mainBlock_step2">
+                <div className="mainBlock_num">2</div>
+                Ввод данных
               </div>
               <div
                 style={{
@@ -70,8 +107,10 @@ function MultiStepAuth() {
                     currentStepIndex + 1 == 3
                       ? "var(--colorMain)"
                       : "var(--colorMainDark)",
-                }}>
-                3 Подтверждение почты
+                }}
+                className="mainBlock_step3">
+                <div className="mainBlock_num">3</div>
+                Подтверждение почты
               </div>
             </div>
             <div className="mainBlock_step">{step}</div>
@@ -80,6 +119,9 @@ function MultiStepAuth() {
             <button type="button" onClick={back} className="mainBlock_btn">
               Вернуться
             </button>
+            <p className="mainBlock_already" onClick={() => navigate("/login")}>
+              Уже есть аккаунт?
+            </p>
             <button type="submit" className="mainBlock_btn">
               Продолжить
             </button>
