@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { FormWrapper } from "../FormWrapper.jsx";
-import CustomInput from "../../Templates/CustomInput.jsx";
+import CustomInput from "../../Templates/Input/CustomInput.jsx";
 import { options, optionsOrg } from "../../../helpers/option.js";
-import "../../Templates/CustomInput.css";
+import "../../Templates/Input/CustomInput.css";
 
 export function UserForm({
   // useData

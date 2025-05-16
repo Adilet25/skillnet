@@ -1,0 +1,64 @@
+import React, { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import HomeIcon from "@mui/icons-material/Home";
+import PostIcon from "@mui/icons-material/PlayArrow";
+import GroupIcon from "@mui/icons-material/Group";
+import SearchIcon from "@mui/icons-material/Search";
+import PersonIcon from "@mui/icons-material/Person";
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
+import "./Sidebar.css";
+
+const Sidebar = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [isOpen, setIsOpen] = useState(true);
+
+  const isOrganization = false;
+
+  const navItems = isOrganization
+    ? [
+        { text: "Главная", icon: <HomeIcon />, path: "/main" },
+        { text: "Панель постов", icon: <PostIcon />, path: "/posts" },
+        { text: "Профиль", icon: <PersonIcon />, path: "/profile" },
+      ]
+    : [
+        { text: "Главная", icon: <HomeIcon />, path: "/main" },
+        { text: "Друзья", icon: <GroupIcon />, path: "/friends" },
+        { text: "Поиск занятий", icon: <SearchIcon />, path: "/search" },
+        { text: "Профиль", icon: <PersonIcon />, path: "/profile" },
+      ];
+
+  const toggleSidebar = () => {
+    setIsOpen(!isOpen);
+  };
+
+  return (
+    <>
+      <div className="burger-menu" onClick={toggleSidebar}>
+        {isOpen ? <CloseIcon /> : <MenuIcon />}
+      </div>
+
+      <div className={`sidebar ${isOpen ? "open" : "closed"}`}>
+        <h2 className="sidebar__logo">SkillNet</h2>
+        <div className="sidebar__list">
+          {navItems.map((item, index) => {
+            const isActive = location.pathname === item.path;
+            return (
+              <div
+                key={index}
+                className={`sidebar__item ${isActive ? "active" : ""}`}
+                onClick={() => navigate(item.path)}>
+                <div>{item.icon}</div>
+                <p>{item.text}</p>
+              </div>
+            );
+          })}
+        </div>
+        <div className="sidebar__logout">Выйти</div>
+      </div>
+    </>
+  );
+};
+
+export default Sidebar;

@@ -1,7 +1,8 @@
 :root {
   --colorMain: #5a65ff;
-  --colorMainDark: #2D36B4;
+  --colorMainDark: #2d36b4;
   --colorMainBright: #838bff;
+  --colorMainOnHover: #7b83ff;
   --colorTextWhite: #ffffff;
   --colorTextBlack: #000000;
   --bgcolor1: #eff1ff;

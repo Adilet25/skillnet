@@ -1,7 +1,7 @@
 import { Container } from "@mui/material";
 import { FormWrapper } from "../FormWrapper.jsx";
 import "../MultiAuth.css";
-import CustomInput from "../../Templates/CustomInput.jsx";
+import CustomInput from "../../Templates/Input/CustomInput.jsx";
 import { useNavigate } from "react-router";
 
 export function LoginForm() {
@@ -58,7 +58,10 @@ export function LoginForm() {
               onClick={() => navigate("/register")}>
               Создать аккаунт
             </p>
-            <button type="submit" className="mainBlock_btn">
+            <button
+              type="submit"
+              className="mainBlock_btn"
+              onClick={() => navigate("/main")}>
               Продолжить
             </button>
           </div>
