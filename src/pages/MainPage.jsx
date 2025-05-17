@@ -292,6 +292,7 @@ const MainPage = () => {
                 description={internship.description}
                 buttonText={internship.buttonText}
                 color={internship.color}
+                rounded
               />
             </SwiperSlide>
           ))}

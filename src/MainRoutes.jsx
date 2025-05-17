@@ -9,6 +9,8 @@ import RegisterPage from "./pages/RegisterPage";
 import LoginPage from "./pages/LoginPage";
 import MainPage from "./pages/MainPage";
 import FriendsPage from "./pages/FriendsPage";
+import CoursesPage from "./pages/CoursesPage";
+import ProfilePage from "./pages/ProfilePage";
 
 // Mock authentication status (Replace with actual logic)
 const isAuthenticated = true;
@@ -23,6 +25,8 @@ const MainRoutes = () => {
   const PRIVATE_ROUTES = [
     { link: "/main", element: <MainPage />, id: 1 },
     { link: "/friends", element: <FriendsPage />, id: 2 },
+    { link: "/courses", element: <CoursesPage />, id: 3 },
+    { link: "/profile/:id", element: <ProfilePage />, id: 4 },
   ];
 
   return (

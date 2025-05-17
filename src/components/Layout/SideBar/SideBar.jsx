@@ -13,7 +13,7 @@ const Sidebar = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(true);
-
+  const userid = 1;
   const isOrganization = false;
 
   const navItems = isOrganization
@@ -25,8 +25,8 @@ const Sidebar = () => {
     : [
         { text: "Главная", icon: <HomeIcon />, path: "/main" },
         { text: "Друзья", icon: <GroupIcon />, path: "/friends" },
-        { text: "Поиск занятий", icon: <SearchIcon />, path: "/search" },
-        { text: "Профиль", icon: <PersonIcon />, path: "/profile" },
+        { text: "Поиск занятий", icon: <SearchIcon />, path: "/courses" },
+        { text: "Профиль", icon: <PersonIcon />, path: `/profile/:${userid}` },
       ];
 
   const toggleSidebar = () => {

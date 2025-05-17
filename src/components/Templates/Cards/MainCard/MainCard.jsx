@@ -1,9 +1,23 @@
 import React from "react";
 import "./MainCard.css";
 
-const MainCard = ({ logo, title, description, buttonText, color, rounded }) => {
+const MainCard = ({
+  logo,
+  title,
+  description,
+  buttonText,
+  color,
+  rounded,
+  hasBorder = true,
+  width = "20rem",
+}) => {
   return (
-    <div className="card" style={{ borderColor: color }}>
+    <div
+      className="card"
+      style={{
+        borderColor: hasBorder ? color : "transparent",
+        width: width,
+      }}>
       <div className="card-logo">
         <img src={logo} alt="CardLogo" className={rounded ? "rounded" : ""} />
         <div className="card-logo_info">
