@@ -1,5 +1,5 @@
 import React from "react";
-import { FRIENDS_DB } from "../../../../pages/FriendsPage";
+import { FRIENDS_DB } from "../../../../helpers/data";
 import chaticon from "../../../../assets/chaticon.svg";
 
 import "./ProfileCard.css";
@@ -17,6 +17,11 @@ const ProfileCard = ({ id }) => {
     const tgLink = `https://t.me/${username}`;
     window.open(tgLink, "_blank");
   };
+  const interestsArray =
+    typeof user.interests === "string"
+      ? user.interests.split(", ").map((item) => item.trim())
+      : user.interests;
+
   return (
     <>
       {user ? (
@@ -24,21 +29,24 @@ const ProfileCard = ({ id }) => {
           <div className="prCard_first">
             <img src={user.img} alt="error" />
             <div className="prCard_info">
-              <h3>{user.name}</h3>
+              <h3>
+                {user.firstName} {user.lastName}
+              </h3>
               <p>{user.desc}</p>
             </div>
           </div>
           <div className="prCard_scn">
             <h4>Интересы и направления пользователя</h4>
             <div className="prCard_interest">
-              {user.interest.map((item) => (
-                <div
-                  style={{
-                    margin: "0.5rem",
-                  }}>
-                  <InterestCard name={item} />
-                </div>
-              ))}
+              {interestsArray.length > 0 ? (
+                interestsArray.map((item, index) => (
+                  <div key={index} style={{ margin: "0.5rem" }}>
+                    <InterestCard name={item} />
+                  </div>
+                ))
+              ) : (
+                <p>Интересы не указаны</p>
+              )}
             </div>
           </div>
           <div className="prCard_thr">

@@ -39,7 +39,9 @@ const SearchBar = ({ inputText, data, renderItem }) => {
   const [searchQuery, setSearchQuery] = useState("");
 
   const filteredData = data.filter((item) =>
-    item.name.toLowerCase().includes(searchQuery.toLowerCase())
+    `${item.firstName} ${item.lastName}`
+      .toLowerCase()
+      .includes(searchQuery.toLowerCase())
   );
 
   return (

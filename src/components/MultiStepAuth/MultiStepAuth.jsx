@@ -8,29 +8,8 @@ import { Container } from "@mui/material";
 
 import "./MultiAuth.css";
 import { LoginForm } from "./forms/LoginForm";
+import { INITIAL_DATA, ORG_DATA } from "../../helpers/data";
 
-const INITIAL_DATA = {
-  firstName: "",
-  lastName: "",
-  email: "",
-  password: "",
-  date: "",
-  username: "",
-  education: "",
-  interests: "",
-};
-const ORG_DATA = {
-  name: "",
-  typeOfWork: "",
-  emailOrg: "",
-  passwordOrg: "",
-  dataContactPerson: "",
-  jobPosition: "",
-  usernameOrg: "",
-  number: "",
-  socialLinks: "",
-  reason: "",
-};
 
 function MultiStepAuth() {
   const navigate = useNavigate("");
@@ -68,7 +47,7 @@ function MultiStepAuth() {
   function onSubmit(e) {
     e.preventDefault();
     if (!isLastStep) return next();
-    alert("Successful Account Creation");
+    navigate("/main");
   }
 
   return (

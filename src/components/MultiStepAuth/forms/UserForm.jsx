@@ -32,6 +32,10 @@ export function UserForm({
   useEffect(() => {
     console.log(type);
   }, []);
+  const handleInterestsChange = (selected) => {
+    updateFields({ interests: selected });
+  };
+
   return (
     <FormWrapper title="Этап 2">
       <div className="chsInfo_block">
@@ -107,15 +111,16 @@ export function UserForm({
           />
           <CustomInput
             label="Интересы и направления"
-            name="Интересы и направления"
             type="select"
+            name="interests"
             options={options}
-            height="3.1rem"
             value={interests}
-            required={true}
-            onChange={(e) => updateFields({ interests: e.target.value })}
+            onChange={handleInterestsChange}
+            multiple={true}
             placeholder="Выберите интересы"
+            height="3rem"
           />
+          
         </div>
       ) : (
         <div className="inputMain_block">

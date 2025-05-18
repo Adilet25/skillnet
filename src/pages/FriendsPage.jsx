@@ -4,90 +4,7 @@ import friendimg from "../assets/friendsimg/friendimg.png";
 import FriendCard from "../components/Templates/Cards/FriendCard/FriendCard";
 import "../styles/color-variables.css";
 import ProfileCard from "../components/Templates/Cards/ProfileCard/ProfileCard";
-
-const FRIENDS_DB = [
-  {
-    id: 1,
-    img: friendimg,
-    username: "kutzhokg",
-    name: "Кутманшер Эрмеков",
-    desc: "Будущий data scientist. Люблю разбираться в числах, участвовать в хакатонахРазрабатываю мобильные приложения, увлекаюсь баскетболом и организую",
-    interest: [
-      "web",
-      "book",
-      "pro",
-      "coding",
-      "cycling",
-      "running",
-      "web",
-      "book",
-      "pro",
-      "coding",
-      "cycling",
-      "running",
-      "web",
-      "book",
-      "pro",
-      "coding",
-      "cycling",
-      "running",
-    ],
-  },
-  {
-    id: 2,
-    img: friendimg,
-    username: "kutzhokg",
-    name: "Давлет Азимов",
-    desc: "Будущий data scientist. Люблю разбираться в числах, участвовать в хакатонахРазрабатываю мобильные приложения, увлекаюсь баскетболом и организую",
-    interest: [
-      "web",
-      "book",
-      "pro",
-      "coding",
-      "cycling",
-      "running",
-      "web",
-      "book",
-      "pro",
-      "coding",
-      "cycling",
-      "running",
-      "web",
-      "book",
-      "pro",
-      "coding",
-      "cycling",
-      "running",
-    ],
-  },
-  {
-    id: 3,
-    img: friendimg,
-    username: "kutzhokg",
-    name: "Согдиана",
-    desc: "Будущий data scientist. Люблю разбираться в числах, участвовать в хакатонахРазрабатываю мобильные приложения, увлекаюсь баскетболом и организую",
-    interest: [
-      "web",
-      "book",
-      "pro",
-      "coding",
-      "cycling",
-      "running",
-      "web",
-      "book",
-      "pro",
-      "coding",
-      "cycling",
-      "running",
-      "web",
-      "book",
-      "pro",
-      "coding",
-      "cycling",
-      "running",
-    ],
-  },
-];
+import { FRIENDS_DB } from "../helpers/data";
 
 const FriendsPage = () => {
   const [userProfile, setUserProfile] = useState(null);
@@ -102,7 +19,8 @@ const FriendsPage = () => {
           <FriendCard
             key={friend.id}
             img={friend.img}
-            name={friend.name}
+            firstName={friend.firstName}
+            lastName={friend.lastName}
             desc={friend.desc}
           />
         )}
@@ -120,7 +38,8 @@ const FriendsPage = () => {
           <FriendCard
             key={1}
             img={friendimg}
-            name="dawdwadawd"
+            firstName='adkadlkladwkjadwkladw'
+            lastName='adljkkladwkjla'
             desc="dwadawdawdwaaw"
             id={1}
           />
@@ -181,7 +100,8 @@ const FriendsPage = () => {
             <FriendCard
               key={friend.id}
               img={friend.img}
-              name={friend.name}
+              firstName={friend.firstName}
+              lastName={friend.lastName}
               desc={friend.desc}
               id={friend.id}
               setUserProfile={setUserProfile}
@@ -192,5 +112,5 @@ const FriendsPage = () => {
     </div>
   );
 };
-export { FRIENDS_DB };
+
 export default FriendsPage;

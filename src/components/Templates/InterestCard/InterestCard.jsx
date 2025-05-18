@@ -1,6 +1,6 @@
 import React from "react";
 
-const InterestCard = ({ name }) => {
+const InterestCard = ({ name, isDelete = false, onDelete }) => {
   return (
     <div
       style={{
@@ -16,6 +16,17 @@ const InterestCard = ({ name }) => {
         cursor: "default",
       }}>
       {name}
+      {isDelete && (
+        <div
+          style={{
+            marginLeft: "1rem",
+            width: "100%",
+            height: "100%",
+          }}
+          onClick={() => onDelete(name)}>
+          ×
+        </div>
+      )}
     </div>
   );
 };
