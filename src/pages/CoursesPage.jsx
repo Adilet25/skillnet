@@ -1,44 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import SearchBar from "../components/Templates/SearchBar/SearchBar";
 import "../styles/color-variables.css";
 import MainCard from "../components/Templates/Cards/MainCard/MainCard";
-import oshka from "../assets/companyLogos/oshka.png";
-
-const courses = [
-  {
-    logo: oshka,
-    name: "Мобильный оператор О!",
-    description:
-      "Помогай продвигать IT-продукт через соцсети, участвуя в создании контента и рекламных кампаниях.",
-    buttonText: "Подробнее",
-    color: "var(--colorMain)",
-  },
-  {
-    logo: oshka,
-    name: "Компания XYZ",
-    description:
-      "Стань частью команды маркетологов и помогай развивать стратегии продвижения.",
-    buttonText: "Узнать больше",
-    color: "var(--colorMain)",
-  },
-  {
-    logo: oshka,
-    name: "TechHub",
-    description:
-      "Работай над проектами с использованием новейших технологий и инструментов.",
-    buttonText: "Присоединиться",
-    color: "var(--colorMain)",
-  },
-  {
-    logo: oshka,
-    name: "Startup Inc.",
-    description: "Помощь в создании контента и продвижении стартапа.",
-    buttonText: "Подробнее",
-    color: "var(--colorMain)",
-  },
-];
+import { courses } from "../helpers/data";
+import { orgId } from "../helpers/data";
+import ProfileCard from "../components/Templates/Cards/ProfileCard/ProfileCard";
 
 const CoursesPage = () => {
+  const [userProfile, setUserProfile] = useState(null);
+
   return (
     <div className="mainContainer">
       <SearchBar
@@ -46,6 +16,7 @@ const CoursesPage = () => {
         data={courses}
         renderItem={(courses) => (
           <MainCard
+            key={id}
             logo={courses.logo}
             title={courses.name}
             description={courses.description}
@@ -56,6 +27,11 @@ const CoursesPage = () => {
           />
         )}
       />
+      {userProfile && (
+        <div>
+          <ProfileCard id={userProfile} isOrg />
+        </div>
+      )}
       <div>
         <h4>Рекомандации</h4>
         <div
@@ -67,12 +43,15 @@ const CoursesPage = () => {
           }}>
           {courses.map((courses) => (
             <MainCard
+              key={courses.id}
+              id={courses.id}
               logo={courses.logo}
               title={courses.name}
               description={courses.description}
               buttonText={courses.buttonText}
               color={courses.color}
               hasBorder={false}
+              setUserProfile={setUserProfile}
               width={"95%"}
             />
           ))}

@@ -73,7 +73,7 @@ const CustomInput = ({
               flexWrap: "wrap",
               gap: "1rem",
               marginTop: "1rem",
-              alignItems:'center'
+              alignItems: "center",
             }}>
             {selectedValues.map((item) => (
               <InterestCard

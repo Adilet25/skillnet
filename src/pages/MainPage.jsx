@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import MainCard from "../components/Templates/Cards/MainCard/MainCard";
-import oshka from "../assets/companyLogos/oshka.png";
 import mainimg from "../assets/mainimg.png";
 
 import "../styles/MainPage.css";
@@ -10,106 +9,9 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { courses, internships, students } from "../helpers/data";
 
-const internships = [
-  {
-    logo: oshka,
-    title: "Мобильный оператор О!",
-    description:
-      "Помогай продвигать IT-продукт через соцсети, участвуя в создании контента и рекламных кампаниях.",
-    buttonText: "Подробнее",
-    color: "var(--colorViol)",
-  },
-  {
-    logo: oshka,
-    title: "Компания XYZ",
-    description:
-      "Стань частью команды маркетологов и помогай развивать стратегии продвижения.",
-    buttonText: "Узнать больше",
-    color: "var(--colorViol)",
-  },
-  {
-    logo: oshka,
-    title: "TechHub",
-    description:
-      "Работай над проектами с использованием новейших технологий и инструментов.",
-    buttonText: "Присоединиться",
-    color: "var(--colorViol)",
-  },
-  {
-    logo: oshka,
-    title: "Startup Inc.",
-    description: "Помощь в создании контента и продвижении стартапа.",
-    buttonText: "Подробнее",
-    color: "var(--colorViol)",
-  },
-];
-const courses = [
-  {
-    logo: oshka,
-    title: "Мобильный оператор О!",
-    description:
-      "Помогай продвигать IT-продукт через соцсети, участвуя в создании контента и рекламных кампаниях.",
-    buttonText: "Подробнее",
-    color: "var(--colorDarkViol)",
-  },
-  {
-    logo: oshka,
-    title: "Компания XYZ",
-    description:
-      "Стань частью команды маркетологов и помогай развивать стратегии продвижения.",
-    buttonText: "Узнать больше",
-    color: "var(--colorDarkViol)",
-  },
-  {
-    logo: oshka,
-    title: "TechHub",
-    description:
-      "Работай над проектами с использованием новейших технологий и инструментов.",
-    buttonText: "Присоединиться",
-    color: "var(--colorDarkViol)",
-  },
-  {
-    logo: oshka,
-    title: "Startup Inc.",
-    description: "Помощь в создании контента и продвижении стартапа.",
-    buttonText: "Подробнее",
-    color: "var(--colorDarkViol)",
-  },
-];
-const students = [
-  {
-    logo: oshka,
-    title: "Мобильный оператор О!",
-    description:
-      "Помогай продвигать IT-продукт через соцсети, участвуя в создании контента и рекламных кампаниях.",
-    buttonText: "Подробнее",
-    color: "var(--colorMain)",
-  },
-  {
-    logo: oshka,
-    title: "Компания XYZ",
-    description:
-      "Стань частью команды маркетологов и помогай развивать стратегии продвижения.",
-    buttonText: "Узнать больше",
-    color: "var(--colorMain)",
-  },
-  {
-    logo: oshka,
-    title: "TechHub",
-    description:
-      "Работай над проектами с использованием новейших технологий и инструментов.",
-    buttonText: "Присоединиться",
-    color: "var(--colorMain)",
-  },
-  {
-    logo: oshka,
-    title: "Startup Inc.",
-    description: "Помощь в создании контента и продвижении стартапа.",
-    buttonText: "Подробнее",
-    color: "var(--colorMain)",
-  },
-];
+
 const MainPage = () => {
   const swiperRef = useRef(null);
   const handlePrev = () => {

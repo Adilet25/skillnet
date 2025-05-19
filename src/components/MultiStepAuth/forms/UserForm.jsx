@@ -178,7 +178,7 @@ export function UserForm({
             value={jobPosition}
             required={true}
             onChange={(e) => updateFieldsOrg({ jobPosition: e.target.value })}
-            placeholder="Введите должность"
+           
           />
           <CustomInput
             label="Ник в Telegram"

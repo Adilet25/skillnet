@@ -2,6 +2,7 @@ import React from "react";
 import "./MainCard.css";
 
 const MainCard = ({
+  id,
   logo,
   title,
   description,
@@ -10,6 +11,8 @@ const MainCard = ({
   rounded,
   hasBorder = true,
   width = "20rem",
+  isEdit = false,
+  setUserProfile,
 }) => {
   return (
     <div
@@ -25,9 +28,21 @@ const MainCard = ({
           <p className="card-description">{description}</p>
         </div>
       </div>
-      <button className="card-button" style={{ backgroundColor: color }}>
-        {buttonText}
-      </button>
+      <div className="cardBtn_block">
+        <button
+          className="card-button"
+          style={{ backgroundColor: color, border: `2px solid ${color}` }}
+          onClick={() => setUserProfile(id)}>
+          {buttonText}
+        </button>
+        {isEdit && (
+          <button
+            className="card-button delBtn"
+            style={{ border: `2px solid ${color}` }}>
+            Удалить пост
+          </button>
+        )}
+      </div>
     </div>
   );
 };

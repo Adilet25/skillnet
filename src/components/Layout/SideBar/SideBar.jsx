@@ -8,19 +8,19 @@ import PersonIcon from "@mui/icons-material/Person";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import "./Sidebar.css";
+import { isOrganization } from "../../../helpers/data";
 
 const Sidebar = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(true);
   const userid = 1;
-  const isOrganization = false;
 
   const navItems = isOrganization
     ? [
         { text: "Главная", icon: <HomeIcon />, path: "/main" },
         { text: "Панель постов", icon: <PostIcon />, path: "/posts" },
-        { text: "Профиль", icon: <PersonIcon />, path: "/profile" },
+        { text: "Профиль", icon: <PersonIcon />, path: `/profile/:${userid}` },
       ]
     : [
         { text: "Главная", icon: <HomeIcon />, path: "/main" },
@@ -31,6 +31,9 @@ const Sidebar = () => {
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
+  };
+  const exitAccount = () => {
+    navigate("/");
   };
 
   return (
@@ -55,7 +58,9 @@ const Sidebar = () => {
             );
           })}
         </div>
-        <div className="sidebar__logout">Выйти</div>
+        <div className="sidebar__logout" onClick={() => exitAccount()}>
+          Выйти
+        </div>
       </div>
     </>
   );

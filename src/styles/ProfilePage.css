@@ -49,6 +49,7 @@
   border-radius: 4px;
   border: 2px solid var(--colorMain);
   color: grey;
+  resize: none;
 }
 .uspInfo {
   background-color: white;
@@ -87,11 +88,11 @@
   .uspInfo_inp {
     grid-template-columns: repeat(1, 1fr);
   }
-  .uspInfo_blockMini{
+  .uspInfo_blockMini {
     flex-direction: column;
     text-align: center;
   }
-  .uspInfo_desc{
+  .uspInfo_desc {
     height: 10rem;
   }
 }
