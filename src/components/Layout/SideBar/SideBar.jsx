@@ -7,7 +7,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import PersonIcon from "@mui/icons-material/Person";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
-import "./Sidebar.css";
+import "./SideBar.css";
 import { isOrganization } from "../../../helpers/data";
 
 const Sidebar = () => {
